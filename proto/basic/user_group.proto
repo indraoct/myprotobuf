@@ -2,6 +2,7 @@ syntax = "proto3";
 
 import "proto/basic/user.proto";
 
+
 option go_package = "myprotobuf/protogen/basic";
 
 message UserGroup {
@@ -11,5 +12,6 @@ message UserGroup {
   repeated User users = 4;
 
   string description = 16;
+
 
 }

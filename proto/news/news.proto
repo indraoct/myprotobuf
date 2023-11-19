@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package the.news;
+
+option go_package="myprotobuf/protogen/news";
+
+message PaperMail {
+  uint32 paper_id = 1 [json_name="paper_id"];
+  string paper_news = 2 [json_name="paper_news"];
+}
+
+message SocialMedia {
+  uint32 social_id = 1 [json_name="social_id"];
+  string social_news = 2 [json_name="social_news"];
+}
+
+message InstantMessaging {
+  uint32 msg_id = 1 [json_name="msg_id"];
+  string msg_news = 2 [json_name="msg_news"];
+}

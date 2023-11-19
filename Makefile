@@ -23,7 +23,8 @@ endif
 .PHONY: protoc
 protoc:
 	protoc --go_opt=module=${GO_MODULE} --go_out=. \
-	./proto/basic/*proto
+	./proto/basic/*proto \
+	./proto/news/*proto
 
 .PHONY: build
 build: clean protoc tidy vendor verify
