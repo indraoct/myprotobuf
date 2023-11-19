@@ -1,0 +1,34 @@
+syntax ="proto3";
+
+option go_package = "myprotobuf/protogen/basic";
+
+enum Gender {
+  GENDER_UNSPECIFIED = 0;
+  GENDER_MALE= 1;
+  GENDER_FEMALE = 2;
+
+}
+
+message User {
+  uint32 id = 1;
+  string username = 2;
+  bool is_active = 3 [json_name ="is_active"];
+  bytes password = 4;
+
+  repeated string emails = 16;
+  Gender gender = 17;
+  Address Address = 18;
+}
+
+message Address {
+  string street = 1;
+  string city = 2;
+  string country = 3;
+
+  Coordinate coordinate = 16;
+
+  message Coordinate{
+    double langitude = 1;
+    double logitude = 2;
+  }
+}
