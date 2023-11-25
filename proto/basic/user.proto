@@ -1,6 +1,7 @@
 syntax ="proto3";
 
 import "google/protobuf/any.proto";
+import "proto/news/news.proto";
 
 option go_package = "myprotobuf/protogen/basic";
 
@@ -21,6 +22,11 @@ message User {
   Gender gender = 17;
   Address Address = 18;
   google.protobuf.Any news = 19;
+  oneof news2 {
+    the.news.SocialMedia social_media = 20 [json_name = "social_media"];
+    the.news.InstantMessaging msg = 21 [json_name = "msg"];
+  }
+
 }
 
 message Address {

@@ -12,5 +12,6 @@ func main() {
 	//basic.ProtoToJsonUser()
 	//basic.JsonToProto()
 	//basic.BasicUserGroup()
-	basic.BasicUserWithNews()
+	//basic.BasicUserWithNews()
+	basic.BasicUserWithNews2()
 }

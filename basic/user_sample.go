@@ -64,6 +64,33 @@ func BasicUserWithNews() {
 	log.Println(&user)
 }
 
+func BasicUserWithNews2() {
+
+	social := news.SocialMedia{
+		SocialId:   99,
+		SocialNews: "pew pew pews",
+	}
+
+	//msg := news.InstantMessaging{
+	//	MsgId:   99,
+	//	MsgNews: "ki ki ki",
+	//}
+
+	news2 := basic.User_SocialMedia{SocialMedia: &social}
+
+	user := basic.User{
+		Id:       69,
+		Username: "indra",
+		IsActive: true,
+		Password: []byte("cemplon"),
+		Emails:   []string{"indra123@gmal.com", "indra234@gmail.com"},
+		Gender:   basic.Gender_GENDER_MALE,
+		News2:    &news2,
+	}
+
+	log.Println(&user)
+}
+
 func randomNews() (anyNews anypb.Any) {
 	rand.NewSource(time.Now().UnixNano())
 
