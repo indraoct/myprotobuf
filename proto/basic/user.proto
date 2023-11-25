@@ -1,7 +1,11 @@
 syntax ="proto3";
 
 import "google/protobuf/any.proto";
+import "google/protobuf/timestamp.proto";
+import "proto/google/type/date.proto";
+import "proto/google/type/latlng.proto";
 import "proto/news/news.proto";
+
 
 option go_package = "myprotobuf/protogen/basic";
 
@@ -26,6 +30,10 @@ message User {
     the.news.SocialMedia social_media = 20 [json_name = "social_media"];
     the.news.InstantMessaging msg = 21 [json_name = "msg"];
   }
+
+  google.protobuf.Timestamp last_login_timestamp = 22 [json_name="last_login_timestamp"];
+  google.type.Date birth_date = 23 [json_name="birth_date"];
+  google.type.LatLng last_known_location = 24  [json_name="last_known_location"];
 
 }
 

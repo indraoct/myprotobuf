@@ -1,8 +1,11 @@
 package basic
 
 import (
+	"google.golang.org/genproto/googleapis/type/date"
+	"google.golang.org/genproto/googleapis/type/latlng"
 	"google.golang.org/protobuf/proto"
 	"google.golang.org/protobuf/types/known/anypb"
+	"google.golang.org/protobuf/types/known/timestamppb"
 	"log"
 	"math/rand"
 	"myprotobuf/protogen/basic"
@@ -30,6 +33,16 @@ func BasicUser() {
 		Emails:   []string{"indra123@gmal.com", "indra234@gmail.com"},
 		Gender:   basic.Gender_GENDER_MALE,
 		Address:  &addr,
+		LastKnownLocation: &latlng.LatLng{
+			Latitude:  40.23842478349234,
+			Longitude: -74.1238198237192,
+		},
+		LastLoginTimestamp: timestamppb.Now(),
+		BirthDate: &date.Date{
+			Year:  1988,
+			Month: 10,
+			Day:   21,
+		},
 	}
 
 	log.Println(&user)
